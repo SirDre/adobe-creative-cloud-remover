@@ -137,7 +137,7 @@ foreach ($regPath in $registryPaths) {
 # Clean uninstall entries
 try {
     $uninstallPath = "HKLM:\SOFTWARE\Microsoft\Windows\CurrentVersion\Uninstall"
-    $adobeUninstalls = Get-ChildItem -Path $uninstallPath | Where-Object { $_.Name -like "*Adobe*" }
+    $adobeUninstalls = Get-ChildItem -Path $uninstallPath -ErrorAction SilentlyContinue | Where-Object { $_.Name -like "*Adobe*" }
     foreach ($item in $adobeUninstalls) {
         Remove-Item -Path $item.PSPath -Recurse -Force -ErrorAction SilentlyContinue
         Write-Host "  Removed uninstall entry: $($item.PSChildName)" -ForegroundColor Green
