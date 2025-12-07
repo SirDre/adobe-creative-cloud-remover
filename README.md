@@ -1,4 +1,4 @@
-# Adobe Creative Cloud Complete Removal Tool
+# Outlook for Windows Complete Removal Tool
 
 A comprehensive PowerShell script to completely remove Adobe Creative Cloud and all related components from Windows systems.
 
